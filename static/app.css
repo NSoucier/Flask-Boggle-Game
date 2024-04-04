@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(172, 220, 239);
+    display: table;
+    margin: auto;
+    text-align: center;
+    font-size: large;
+
+}
+
+table {
+    color: rgb(110, 89, 58);
+    text-align: center;
+    margin: auto;
+    padding: 20px 15px;
+    width: 485px;
+    height: 455px;
+    font-size: 60px;
+    border: 1px solid black;
+    font-weight: bolder;
+    background: url('boggle_board.png');
+    background-size: 480px 450px;
+}
+
+form {
+    padding: 20px 0;
+    font-size: x-large;
+    margin: auto;
+}
+
+input {
+    font-size: large;
+}
+
+button {
+    font-size: large;
+}
+
+div {
+    color: #4b67c1;
+    margin: auto;
+    font-size: xx-large;
+    font-weight: bold;
+}

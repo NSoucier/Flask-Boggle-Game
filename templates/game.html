@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<!-- Score display -->
-<h2 id="score">Your score: </h2>
+<!-- Score and timer display -->
+<h2 id="score">Your score: 0</h2>
 <h2 id="timer">Timer: 60</h2>
 
 <!-- Gameboard display -->
@@ -17,14 +17,11 @@
     {% endfor %}
 </table>
 
-
-
 <!-- Form for new word -->
 <form action="">
     <label for="">Enter your word here: </label> 
     <input type="text" name="new_word">
     <button>Submit word</button>
     </form>
-
 
 {% endblock %}

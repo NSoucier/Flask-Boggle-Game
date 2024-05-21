@@ -24,7 +24,7 @@ table {
     background-size: 480px 450px;
 }
 
-form {
+#wordForm {
     padding: 20px 0;
     font-size: x-large;
     margin: auto;
@@ -50,4 +50,25 @@ p {
     margin: auto;
     font-size: xx-large;
     font-weight: bold;
+}
+
+#timer {
+    display: inline-block;
+    margin: 0;
+}
+
+form {
+    display: inline-block;
+}
+
+#restart {
+    color: white;
+    background-color: rgb(41 47 231 / 79%);
+    border-radius: 10%;
+    border: none;
+    padding: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    cursor: pointer;
 }

@@ -3,8 +3,12 @@
 {% block content %}
 
 <!-- Score and timer display -->
-<h2 id="score">Your score: 0</h2>
+<h2 id="score">Current score: 0 </h2>
+<h2 id="highscore">Highscore: {{highscore}}</h2>
 <h2 id="timer">Timer: 60</h2>
+<form action="/">
+    <button id="restart">Restart</button>
+</form>
 
 <!-- Gameboard display -->
 <table>
@@ -18,10 +22,10 @@
 </table>
 
 <!-- Form for new word -->
-<form action="">
+<form id="wordForm" action="">
     <label for="">Enter your word here: </label> 
     <input type="text" name="new_word">
-    <button>Submit word</button>
+    <button id="submit">Submit word</button>
     </form>
 
 {% endblock %}

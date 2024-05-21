@@ -16,7 +16,8 @@ def start_game():
     
     board_contents = boggle_game.make_board()
     session['board_contents'] = board_contents
-    return render_template('game.html', content=board_contents)
+    session['highscore'] = max(session.get("highscore", 0), 0)
+    return render_template('game.html', content=board_contents, highscore=session['highscore'])
 
 @app.route('/input', methods=['POST'])
 def check_word():

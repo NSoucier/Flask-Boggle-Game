@@ -1,11 +1,12 @@
 'use strict';
 
-const $submitWord = $('button');
+const $submitWord = $('#submit');
 const $userWord = $('input');
 const $body = $('body');
 const $score = $('#score');
+const $highscore = $('#highscore');
 const $timer = $('#timer');
-let totalScore = 0
+let totalScore = 0;
 let timer = 60;
 
 // receives input from form and checks if the word is valid
@@ -31,9 +32,9 @@ async function checkNewWord(evt) {
             answer.innerText = `Good job, you found the word "${word}"!`;
             updateScore(word);
         } else if (response.data.result === 'not-word') { // user entered something that is not a word
-            answer.innerText = `Please try again, "${word}" could not be found in our dictionary.`;
+            answer.innerText = `Invalid, "${word}" could not be found in our dictionary.`;
         } else if (response.data.result === 'not-on-board') { // user entered a word not found on the board
-            answer.innerText = `Please try again, "${word}" could not be found on the Boggle board.`;
+            answer.innerText = `Invalid, "${word}" could not be found on the Boggle board.`;
         } else {
             answer.innerText = 'You have already guessed that word.';
         }
@@ -46,7 +47,7 @@ async function checkNewWord(evt) {
 function updateScore(word) {
     const points = word.length;
     totalScore += points;
-    $score.text(`Your score: ${totalScore}`);
+    $score.text(`Current score: ${totalScore}`);
 }
 
 // start game timer when first word is submitted (60 second timer)
@@ -67,9 +68,7 @@ async function storeResults() {
     const response = await axios.post("/finished", { score: totalScore });
 
     let highscore = response.data.highestscore;
-    let results = document.createElement('p');
-    results.innerText = `Your current highscore: ${highscore}`;
-    $body.append(results);
+    $highscore.text(`Highscore: ${highscore}`)
 }
 
 $submitWord.on('click', checkNewWord); // listen for word submission

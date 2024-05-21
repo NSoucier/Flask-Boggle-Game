@@ -26,7 +26,10 @@ class Boggle():
         for y in range(5):
             row = [choice(string.ascii_uppercase) for i in range(5)]
             board.append(row)
-
+        
+        # Bias to contain more vowels
+        board[1][choice([0,1,2,3,4])] = choice('AEIOUY')
+        board[3][choice([0,1,2,3,4])] = choice('AEIOUY')
         return board
 
     def check_valid_word(self, board, word):

@@ -10,6 +10,11 @@ html {
     background-image: radial-gradient(circle, #18bfff94, #ffffff);
 }
 
+#title {
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
 table {
     color: rgb(110, 89, 58);
     text-align: center;
@@ -64,10 +69,10 @@ form {
 #restart {
     color: white;
     background-color: rgb(41 47 231 / 79%);
-    border-radius: 10%;
+    border-radius: 8px;
     border: none;
-    padding: 10px;
-    margin-left: 20px;
+    padding: 7px 10px;
+    margin-left: 250px;
     margin-bottom: 20px;
     display: inline-block;
     cursor: pointer;

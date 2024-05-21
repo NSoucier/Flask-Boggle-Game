@@ -55,8 +55,10 @@ function startTimer() {
     let timerID = setInterval(countdown, 1000);
     function countdown() {
         timer--;
-        $timer.text(`     Timer: ${timer}`)
+        $timer.text(`Timer: ${timer}`)
         if (timer === 0) { // stop timer when it reaches 0 
+            $timer.text(`Game over!`)
+            $timer.css('color', 'red')
             clearInterval(timerID)
             storeResults();
         }

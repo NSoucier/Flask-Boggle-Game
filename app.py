@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template, jsonify
 from flask import session
+from flask_cors import CORS
 from flask_debugtoolbar import DebugToolbarExtension
 from boggle import Boggle
 
 app = Flask(__name__)
+CORS(app)
 app.config['SECRET_KEY'] = "oh-so-secret"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
